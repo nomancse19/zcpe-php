@@ -1,15 +1,26 @@
 <?php
+//Basic Example Of Lambda Or Anonymous Function 
 
-$a=range(1,100);
+$result=function($a,$b){
+    return $a*$b;
+};
 
-function manual_array_filter(array $ar_data,$callback_function){
-    return $callback_function($ar_data);
-}
+echo $result(5,18)."<pre>"; //Result Is 90
+echo $result(154,18)."<br>"; //Result Is 2772
+echo $result(40,18)."<br>"; //Result Is 720
 
-$check= manual_array_filter($a,function($number){
-    return $number%2==0;
-});
-echo "<pre>";
-print_r($check);
+
+//One Function Call Inside Another Function 
+
+ function calculate_sum($function){
+    echo 'Sum Of'.$function;
+ }
+
+ $add_function=function($a,$b){
+    return $a+$b;
+ };
+
+ calculate_sum($add_function(15,45));
+
 
 ?>
